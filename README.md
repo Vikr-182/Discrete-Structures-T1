@@ -1,5 +1,5 @@
-# Discrete-Structures-M20
-Repository containing resources for Tutorials and Assignments of the Discrete Structures Monsoon 2020, Term 1 at IIITH.
+# Discrete-Structures-T1
+Repository containing resources for Tutorials and Assignments of the Discrete Structures, Term 1 for Section A at IIITH.
 
 ## References
 | Topic                          	| Reference                                                                                       	|
