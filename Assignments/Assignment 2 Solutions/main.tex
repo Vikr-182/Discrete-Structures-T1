@@ -1,0 +1,248 @@
+
+
+%\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
+\title{ELEC 340 Assignment 3}
+\nonstopmode
+%\usepackage[utf-8]{inputenc}
+\usepackage{graphicx} % Required for including pictures
+\usepackage[figurename=Figure]{caption}
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{enumitem}
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+\usepackage{paralist} % paragraph spacing
+\usepackage{listings} % For source code
+\usepackage{subfig}   % For subfigures
+%\usepackage{physics}  % for simplified dv, and 
+\usepackage{enumitem} % useful for itemization
+\usepackage{siunitx}  % standardization of si units
+
+\usepackage{tikz,bm} % Useful for drawing plots
+%\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+\usepackage{ctable}
+%%% Colours used in field vectors and propagation direction
+\definecolor{mycolor}{rgb}{1,0.2,0.3}
+\definecolor{brightgreen}{rgb}{0.4, 1.0, 0.0}
+\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{darkelectricblue}{rgb}{0.33, 0.41, 0.47}
+\definecolor{darkpowderblue}{rgb}{0.0, 0.2, 0.6}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38}
+\definecolor{pastelviolet}{rgb}{0.8, 0.6, 0.79}
+
+\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+
+\begin{document}
+
+\begin{center}
+\specialrule{0.02em}{}{}
+\hrule
+\vspace{0.3cm}
+	{\textbf { \large {Discrete Structures (MA5.101) }}} 
+\end{center}
+\textbf{Instructor:}\ Dr. Ashok Kumar Das \hspace{\fill}\textbf{Assignment 2 Solutions}    \\
+{\textbf{IIIT Hyderabad}   } \hspace{\fill} \textbf{Total Marks}: 70 \\ 
+% keep it at the left side
+\specialrule{0.01em}{}{}
+\hrule
+
+\paragraph*{Problem 1 } 
+     \begin{align*}
+           & \forall a \in A,  \exists b \text{ such that } {}_aR_b & \ldots \text{\{given\}}
+           \\ &\forall a \in A, {}_aR_b \implies _bR_a & \ldots \text{\{since symmetric\}}
+           \\ & \forall a \in A, ({}_aR_b) \land ({}_bR_a) \implies (_aR_a)  & \ldots \text{\{since transitive\}} 
+     \end{align*}
+     Thus we get that $R$ is reflexive too, which is why it is equivalent.
+     
+     You must write the $\forall$ quantifier, while mentioning both the reason for it being reflexive, and when you are saying $(a,b) \in R$.
+\paragraph*{Problem 2}
+Given $N = |A| = 10,$
+\begin{enumerate}
+    \item $2^{N^2} = 2^{100}$
+    \item $2^{N(N - 1)} = 2^{90}$
+    \item $2^{N}3^{\frac{N(N - 1)}{2}} = 2^{10}3^{45}$
+    \item $2^{\frac{N(N - 1)}{2}} = 2^{45}$
+    \item $115,975$
+\end{enumerate}
+
+\paragraph*{Problem 3}
+
+\begin{enumerate}[a.]
+\item \begin{align*}
+    & (a,b) \in (R_1 \cup R_2)^{-1}
+    \\& \implies (b,a) \in (R_1 \cup R_2)
+    \\& \implies ((b,a) \in R_1) \lor ((b,a) \in R_2)
+    \\& \implies ((a,b) \in (R_1)^{-1}) \lor  ((a,b) \in R_2^{-1})
+    \\& \implies (a,b) \in (R_1^{-1} \cup R_2^{-1})
+    \\& (R_1 \cup R_2)^{-1} \subseteq (R_1^{-1} \cup R_2^{-1})
+\end{align*}
+
+\begin{align*}
+    & (a,b) \in (R_1^{-1} \cup R_2^{-1})
+    \\& \implies ((a,b) \in (R_1)^{-1}) \lor  ((a,b) \in R_2^{-1})
+    \\& \implies ((b,a) \in R_1) \lor ((b,a) \in R_2)
+    \\& \implies (b,a) \in (R_1 \cup R_2)
+    \\ & \implies (a,b) \in (R_1 \cup R_2)^{-1}    
+     \\& (R_1^{-1} \cup R_2^{-1})   \subseteq  (R_1 \cup R_2)^{-1} 
+\end{align*}
+\item 
+\begin{enumerate}[i.]
+    \item If $\forall a \in A,(a,a) \in R$, then by definition, so should $\forall a \in A,(a,a) \in R^{-1}$. Thus $R^{-1}$ should also be reflexive.
+    \item We assume $(a,b) \in R^{-1}$. We have to prove that $(b,a) \in R^{-1}$. 
+    \begin{align*}
+        & (b,a) \in R^{-1} &
+        \\ \implies (a,b) \in R & \ldots \text{\{ by definition\}}
+        \\ \implies (b,a) \in R & \ldots \text{\{ by symmetric property\}}
+        \\ \implies (a,b) \in R^{-1} & \ldots \text{\{ by definition\}}
+    \end{align*}
+    \item We assume $(a,b), (b,c) \in R^{-1}$. We have to prove that $(a,c) \in R^{-1}$.
+    \begin{align*}
+         ((a,b) \in R^{-1}) \land ((b,c) \in R^{-1}) &
+        \\ \implies ((b,a) \in R) \land ((c,b) \in R)  & \ldots \text{\{ by definition\}}
+        \\ \implies ((c,b) \in R) \land ((b,a) \in R)  & \ldots \text{\{ commutativity of $\land$\}}
+        \\ \implies  (c,a) \in R  & \ldots \text{\{ by transitive property\}}
+        \\ \implies (a,c) \in R & \ldots \text{\{ by definition\}}
+    \end{align*}    
+\end{enumerate}
+For ii and iii, you had to start with a tuple in $R^{-1}$ and not $R$, since you have to generalize over $R^{-1}$, we have cut marks if you have not.
+\end{enumerate}
+
+
+\paragraph*{Problem 4}
+\begin{enumerate}[a.]
+    \item $\rho \subseteq R^2$ such that $_{(a, b)}\rho_{(c,d)}$ means that $(a,b)$ and $(c,d)$ lie on the same curve $4x + 5y = k$ for some $k \in \mathbb{R}$. 
+        \begin{enumerate}[i.]
+            \item \textbf{Reflexive:} $(a, b)$ and $(a,b)$ obviously lie on the same curve $4a + 5b = k$. Thus the relation $\rho$ is reflexive.
+            \item \textbf{Symmetric:} Let $_{(a,b)}\rho_{(c,d)}$ be true for some $(a, b)$ and $(c, d)$, i.e. $(a,b)$ and $(c,d)$ lie on the same curve $4x + 5y$ $\implies$ $(c,d)$ and $(a,b)$ lie on the same curve. $4a + 5b = 4c + 5d = k$. The relation $\rho$ is symmetric.
+            \item \textbf{Transitive:} Let us assume that $_{(a,b)}\rho_{(c,d)}$ and $_{(c,d)}\rho_{(e,f)}$, i.e 
+            \begin{gather*}
+                4a + 5b = k_1 = 4c + 5d \\
+                4c + 5d = k_2 = 4e + 5f
+            \end{gather*}
+            Thus we have $k_1 = k_2$, thus $4a + 5b = 4e + 5f$. Thus $(a, b)$ and $(e, f)$ lie on the same curve. Thus $_{(a,b)}\rho_{(e,f)}$ holds. The relation $\rho$ is transitive. 
+        \end{enumerate}
+    Thus the relation $\rho$ is an equivalent relation. The equivalence class for the relation $\rho$ is given by: 
+    \[
+        [(a, b)]_\rho = \{(x, y)\  |\  4x + 5y = 4a + 5b\}
+    \]
+    (Source of mistake): Most have written the equivalence class as: 
+    \[
+        [(a, b)]_\rho = \{(x, y)\  |\  4x + 5y = k\} \text{ for some $k \in \mathbb{R}$}
+    \]
+    This is incorrect as this is the relation $\rho$ itself and not an equivalence class of $(a,b)$
+    
+    \item $\psi \subseteq R^2$ such that $_{(a, b)}\psi_{(c,d)}$ means that $(a,b)$ and $(c,d)$ lie on the same curve $9x^2 + 16y^2 = k^2$ for some $k \in \mathbb{R}$. 
+        \begin{enumerate}[i.]
+            \item \textbf{Reflexive:} $(a, b)$ and $(a,b)$ obviously lie on the same curve $9x^2 + 16y^2 = k^2$. Thus the relation $\psi$ is reflexive.
+            \item \textbf{Symmetric:} Let $_{(a,b)}\psi_{(c,d)}$ be true for some $(a, b)$ and $(c, d)$, i.e. $(a,b)$ and $(c,d)$ lie on the same curve $9x^2 + 16y^2$ $\implies$ $(c,d)$ and $(a,b)$ lie on the same curve. $9a^2 + 16b^2 = 9c^2 + 16d^2 = k^2$. The relation $\psi$ is symmetric.
+            \item \textbf{Transitive:} Let us assume that $_{(a,b)}\psi_{(c,d)}$ and $_{(c,d)}\psi_{(e,f)}$, i.e 
+            \begin{gather*}
+                9a^2 + 16b^2 = k_1^2 = 9c^2 + 16d^2 \\
+                9c^2 + 16d^2 = k_2^2 = 9e^2 + 16f^2
+            \end{gather*}
+            Thus we have $k_1^2 = k_2^2$, thus $9a^2 + 16b^2 = 9e^2 + 16f^2$. Thus $(a, b)$ and $(e, f)$ lie on the same curve. Thus $_{(a,b)}\psi_{(e,f)}$ holds. The relation $\psi$ is transitive. 
+        \end{enumerate}
+    Thus the relation $\psi$ is an equivalent relation. The equivalence class for the relation $\psi$ is given by: (Try to guess the geometric curve formed as well)
+    \[
+        [(a, b)]_\psi = \{(x, y)\  |\  9x^2 + 16y^2 = 9a^2 + 16b^2\}
+    \]
+    (Source of mistake): Most have written the equivalence class as: 
+    \[
+        [(a, b)]_\psi = \{(x, y)\  |\  9x^2 + 16y^2 = k^2\} \text{ for some $k \in \mathbb{R}$}
+    \]
+    This is incorrect as this is the relation $\psi$ itself and not an equivalence class of $(a,b)$
+\end{enumerate}
+
+\paragraph*{Problem 5}
+    \begin{enumerate}[a.]
+        \item We need to show the double implication, $[a] = [b] \iff (a,b) \in R$ where $R$ is the equivalent relation. 
+        \begin{enumerate}[i.]
+            \item Let us assume $[a] = [b]$. We need to show $(a,b) \in R$. Now we have: 
+            \[
+                [a]_R = \{x | (a, x) \in R\}; \ \  [b]_R = \{x | (b, x) \in R\}
+            \]
+            Now we begin: 
+            \begin{align*}
+                R \text{ is reflexive} \implies (a, b) &\implies a \in [a]_R \ldots\text{(By defn. of $[a]$)} \\
+                &\implies a \in [b]_R\ldots([a]_R = [b]_R) \\
+                &\implies (b, a) \in R \ldots\text{(By defn of $[b]_R$)} \\
+                &\implies (a, b) \in R \ldots \text{($R$ is symmetric)}
+            \end{align*} 
+            Thus $[a]_R = [b]_R \implies (a, b) \in R$
+            
+            \item Let us assume that $(a, b) \in R$ and show that $[a]_R = [b]_R$. For this we neted to first show $[a]_R \subseteq [b]_R$ and then $[b]_R \subseteq [a]_R$. 
+            \begin{enumerate}[(a)]
+                \item $[a]_R \subset [b]_R$: Let $x \in [a]_R$
+                \begin{align*}
+                    &\implies (a, x) \in R \ldots\text{(By defn)} \\
+                    &\implies (x, a) \in R \ldots \text{($R$ is symmetric)} \\
+                    &\implies (x, b) \in R \ldots \text{(Using $(a, b) \in R$ and $R$ is transitive)} \\
+                    &\implies (b, x) \in R \ldots \text{($R$ is symmetric)} \\ 
+                    &\implies x \in [b]_R \ldots \text{(By defn)}
+                \end{align*}
+                Thus we have $[a]_R \subseteq [b]_R$.
+                \item $[b]_R \subset [a]_R$: Let $x \in [b]_R$
+                \begin{align*}
+                    &\implies (b, x) \in R \ldots\text{(By defn)} \\
+                    &\implies (x, b) \in R \ldots \text{($R$ is symmetric)} \\
+                    &\implies (x, a) \in R \ldots \text{(Using $(a, b) \in R$ and $R$ is symmetric and transitive)} \\
+                    &\implies (a, x) \in R \ldots \text{($R$ is symmetric)} \\ 
+                    &\implies x \in [a]_R \ldots \text{(By defn)}
+                \end{align*}
+                Thus we have $[b]_R \subseteq [a]_R$.
+            \end{enumerate}
+            Thus from \textit{(a)} and \textit{(b)} we can say that $(a, b) \in R \implies [a]_R = [b]_R$
+        \end{enumerate}
+        Thus from \textit{(i)} and \textit{(ii)} we have shown that the double implication holds.
+        \item We need to show that either $[a] \cap [b] = \phi$ or $[a] = [b]$, We will prove one part by using proof by contradiction.
+        
+        Let us assume the contrary that $[a] \cap [b] \neq \phi$. Then 
+        \[
+            \exists x \hspace{2mm} (x \in [a]) \wedge (x \in [b])
+        \]
+        That is,
+        \begin{align*}
+            x \in [a] &\implies (a, x) \in R \ldots \text{(By defn)} \\
+            x \in [b] &\implies (b, x) \in R \ldots \text{(By defn)} \\
+                      &\implies (x, b) \in R \ldots \text{($R$ is symmetric)}\\
+                      &\implies (a, b) \in R \ldots \text{(Using the above two, $R$ is transitive)}
+        \end{align*}
+        Thus we have $[a] = [b]$ (Using part a.) which is contradiction to our assumption, which means that our assumption was incorrect and $[a]$ and $[b]$ are not disjoint under certain scenarios, rather $[a] = [b]$.
+        
+        If we have $(a, b) \notin R$ then, $[a] \cup [b]$ will have to be disjoint because of the above proof. Thus we have only the two cases.
+    \end{enumerate}
+
+\paragraph*{Problem 6} 
+
+    Many examples exist. The most common one among all submissions is the following:
+    
+    The set of integers $\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots \}$ is a totally ordered set with respect to the relation $R = \{(x, y) \in \mathbb{Z}^2 | x \leq y \}$
+    \begin{enumerate}[a.]
+        \item \textbf{Reflexive:} For any integer $a \in \mathbb{Z}$ $a \leq a$. Thus the relation is reflexive.
+        \item \textbf{Anti-Symmetric:} For any arbitrary integers $a, b \in \mathbb{Z}$, if $a leq b$ does not necessarily imply $b \leq a$. Thus the relation is anti-symmetric.
+        \item \textbf{Transitive:} Let us assume that the relation $R$ holds for the pair $(a, b)$ and $(b, c)$. Then we have $a \leq b \leq c$. Thus $(a, c)$ is also holds. Thus the relation is transitive.
+    \end{enumerate}
+
+\paragraph*{Problem 7}
+
+    We are given that $A_i \cup A_j = \phi$. So all we need to show that $\bigcup_{i=1}^k A_i = A$. We have to show this by showing both sides are subsets of each other:
+    \begin{enumerate}[a.]
+        \item $\bigcup_{i=1}^k A_i \subseteq A$: We have $A_i \subseteq A$. Therefore we will definitely have $\bigcup_{i=1}^k A_i \subseteq A$
+        \item $A \subset \bigcup_{i=1}^k A_i$: We can prove by contradiction. Let us assume the contrary, i.e. 
+        \[
+            \exists x \in A \hspace{2mm} x \notin A_i \forall i = 1, 2, \ldots, k
+        \]
+        Now we know that $(x,x) \in R$ because $R$ is a reflexive relation. Thus $x \in A_i$ which is a contradiction to our assumption. Thus our assumption was incorrect, and we have that for all $x \in A \implies x \in A_i$ for some $i= 1, 2, \ldots, k$. Thus $A \subset \bigcup_{i=1}^k A_i$. 
+    \end{enumerate}
+    Therefore from \textit{a.} and \textit{b.}, we have $A = \bigcup_{i=1}^k A_i$. 
+    
+    Thus we have our result that $A_i$s are partitions of the set $A$ with respect to the equivalent relation $R$.
+\end{document}
+

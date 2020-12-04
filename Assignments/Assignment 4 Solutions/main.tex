@@ -1,0 +1,135 @@
+
+
+%\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
+\title{ELEC 340 Assignment 3}
+\nonstopmode
+%\usepackage[utf-8]{inputenc}
+\usepackage{graphicx} % Required for including pictures
+\usepackage[figurename=Figure]{caption}
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{enumitem}
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+\usepackage{paralist} % paragraph spacing
+\usepackage{listings} % For source code
+\usepackage{subfig}   % For subfigures
+%\usepackage{physics}  % for simplified dv, and 
+\usepackage{enumitem} % useful for itemization
+\usepackage{siunitx}  % standardization of si units
+
+\usepackage{tikz,bm} % Useful for drawing plots
+%\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+\usepackage{ctable}
+\usepackage{multicol}
+%%% Colours used in field vectors and propagation direction
+\definecolor{mycolor}{rgb}{1,0.2,0.3}
+\definecolor{brightgreen}{rgb}{0.4, 1.0, 0.0}
+\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{darkelectricblue}{rgb}{0.33, 0.41, 0.47}
+\definecolor{darkpowderblue}{rgb}{0.0, 0.2, 0.6}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38}
+\definecolor{pastelviolet}{rgb}{0.8, 0.6, 0.79}
+
+
+\begin{document}
+
+\begin{center}
+\specialrule{0.02em}{}{}
+\hrule
+\vspace{0.3cm}
+	{\textbf { \large {Discrete Structures (MA5.101) }}} 
+\end{center}
+\textbf{Instructor:}\ Dr. Ashok Kumar Das \hspace{\fill}\textbf{Assignment 4 Solutions}    \\
+{\textbf{IIIT Hyderabad}   } \hspace{\fill} \textbf{Total Marks}: 70 \\ 
+% keep it at the left side
+\specialrule{0.01em}{}{}
+\hrule
+
+\paragraph*{Problem 1 } 
+\\ \textbf{Base Case : } $n = 1$.
+It is trivially true.
+\begin{align*}
+    A \cup (B_1) = (A \cup B_1)
+\end{align*}
+\\
+\textbf{Induction Hypothesis : } Assume it to be true for $n = k$. That is 
+\begin{align*}
+        A \cup (B_1 \cap B_2 \ldots B_{k}) &= (A \cup B_1) \cap (A \cup B_2) \ldots  (A \cup B_k)
+\end{align*}
+We shall prove it for $n = k+1$.
+\small{
+\begin{align*}
+    A \cup (B_1 \cap B_2 \ldots B_{k+1}) &= \big(A \cup (B_1 \cap B_2 \ldots B_k)\big) \cap \big(A  \cap B_{k+1}\big)  & \ldots \{\text{ by distributive law}\}
+    \\ &=  \big((A \cup B_1) \cap (A \cup B_2) \ldots  (A \cup B_k)\big) \cap (A \cup B_{k+1}) & \ldots \{\text{ by hypothesis}\}
+    \\ &= (A \cup B_1) \cap (A \cup B_2) \ldots  (A \cup B_k) \cap (A \cup B_{k+1}) & \ldots \{\text{ by associative law}\}
+\end{align*}
+}
+\paragraph*{Problem 2 } 
+\\ Let $f = (1 \text{ } i), g = (1 \text{ }2 \text{ }3 \ldots \text{ }n)$. We have 2 cases - 
+\begin{enumerate}
+    \item $i \leq n$
+    \\ Then we have 
+    \begin{align*}
+        f \circ g (k) &= \begin{cases}
+            k + 1 &\text{ when } k \notin \{i + 1, n\}
+            \\ 1 &\text{ when } k = i - 1
+            \\ i &\text{ when } k = n
+        \end{cases}
+    \end{align*}
+    Thus we have 2 independent cycles here $(1 \text{ } 2\text{ } 3\text{ } \ldots i-1)$ and $(i \text{ } i + 1 \text{ } \ldots n)$, and our final permutation is a composition of these two - 
+    \begin{align*}
+        (1 \text{ } 2\text{ } 3\text{ } \ldots i-1) (i \text{ } i + 1 \text{ } \ldots n)
+    \end{align*}
+    \item $i > n$
+    \\ Then we have 
+    \begin{align*}
+        f \circ g (k) &= \begin{cases}
+            k + 1 &\text{ when } k \notin \{i, n\}
+            \\ 1 &\text{ when } k = i - 1
+            \\ i &\text{ when } k = n
+        \end{cases}
+    \end{align*}
+    Thus we can express our permutation as 
+    \begin{align*}
+        (1 \text{ } 2\text{ } 3\text{ } \ldots n \text{ } i)
+    \end{align*}
+\end{enumerate}
+\paragraph*{Problem 3 } 
+Let $S = \{n_1, n_2 \ldots n_{16}\}$. The primes $\leq$ 7 are 2,3,5,7. Thus each of them is expressable as 
+\begin{align*}
+    n_i = 2^{x_1} 3^{x_2} 5^{x_3} 7^{x_4}
+\end{align*}
+We construct a mapping from $f:S \rightarrow B_4$, where  $B_4$ is the set of binary tuples of length 4, such that - 
+\begin{align*}
+    f(n_i) &= (({x_1} \text{ mod} 2),(x_2 \text{ mod} 2), (x_3 \text{ mod} 2), (x_4 \text{ mod} 2) )
+\end{align*}
+As we have $|B| = 16$, we have 2 cases - 
+\begin{enumerate}
+    \item The mapping $f$ is onto. Every tuple in $B_4$ has a pre-image.  In this case the tuple $(0,0,0,0)$ should also be there, which means $f^{-1}(0,0,0,0) = 2^{x_1} 3^{x_2} 5^{x_3} 7^{x_4}$ such that $x_1,x_2,x_3,x_4$ are divisible by 2. We can write each of them as $x_i = 2.k_i$ where $k_i \in \mathbb{N}$. Thus we have
+    \begin{align*}
+        n_i &= 2^{x_1} 3^{x_2} 5^{x_3} 7^{x_4}
+        \\ &= 2^{2k_1} 3^{2k_2} 5^{2k_3} 7^{2k_4}
+        \\ &= \big( 2^{k_1} 3^{k_2} 5^{k_3} 7^{k_4} \big)^2
+    \end{align*}
+    Thus an element is a perfect square.
+    \item If $f$ is not onto, then we must have, by pigeon hole principle since $|Range(f)| < |S|$, at least one element must have 2 pre-images. Here the images are our holes and the set $S$ contains our pigeons. Therefore, let the common element be $(y_1,y_2,y_3,y_4)$ (where each $y_i < 2$), which are pre-images of $n_l$ and $n_m$. Thus we have $f(n_l) = f(n_m) =(y_1,y_2,y_3,y_4)$ . Let $x_{li} = 2.k_{li} + y_1$ and $x_{mi} = 2.k_{mi} + y_1$. We have
+    \begin{align*}
+        n_l n_m &= \big(2^{x_{l1}} 3^{x_{l2}} 5^{x_{l3}} 7^{x_{l4}} \big) \big(2^{x_{m1}} 3^{x_{m2}} 5^{x_{m3}} 7^{x_{m4}}\big)
+        \\ &= \big(2^{2.k_{l1} + y_1} 3^{2.k_{l2} + y_2} 5^{2.k_{l3} + y_3} 7^{2.k_{l4} + y_4} \big)\big(2^{2.k_{m1} + y_2} 3^{2.k_{m2} + y_3} 5^{2.k_{m3} + y_4} 7^{2.k_{m4} + y_4}\big)
+        \\ &= \big(2^{k_{l1} + k_{m1} + y_1} 3^{k_{l2} + k_{m2} + y_2} 5^{k_{l3} + k_{m3} + y_3} 7^{k_{l4} + k_{m4} + y_4}  \big)^2
+    \end{align*}
+    and thus is a perfect square. Thus product of 2 elements is a perfect square.
+\end{enumerate}
+\paragraph*{Problem 4 }
+Take our pigeonholes as $\{1,12\},\{2,11\},\{3,10\},\{4,9\},\{5,8\},\{6,7\}$. If we take 7 numbers (pigeons) from them, since there are 6 holes, we must select 2 pigeons from the same hole, thus by PHP, we have at least 1 pair must sum to 13.
+
+\paragraph*{Problem 5 }
+\end{document}
