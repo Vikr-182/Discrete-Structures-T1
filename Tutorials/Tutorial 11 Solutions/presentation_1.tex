@@ -1,0 +1,349 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 11} % Your email address
+}
+\date{October 21, 2020} % Date, can be changed to a custom date
+\newcommand{\comment}[1]{}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 0}
+%------------------------------------------------
+\begin{frame}{Question 0}
+\footnotesize{
+    \\ \textbf{0.1:} $ f,g$ are bijective. $\implies f \circ g$ is bijective.
+    \\ \textbf{Sol:} 
+    \\ Assume $f:A \rightarrow B, g:C \rightarrow A$
+     \\ \textbf{Proof that it is Injective:} Say if $f \circ g (x_1) = g \circ f (x_2)$. Now since $f$ is injective, we must have that $g (x_1) = g (x_2)$ and since $g$ is injective, we must have $x_1 = x_2$. Thus we have proved that $f \circ g (x_1) = g \circ f (x_2) \implies x_1 = x_2$.
+      \\ \textbf{Proof that it is Surjective:} We need to prove that 
+      $$\forall y \in B, \exists x \in C \text{ such that } f(x) = y$$
+      Similarly, we say that since $f$ is surjective, we have that 
+      $$\forall y \in B, \exists z \in A \text{ such that } f(z) = y$$
+      We first use the fact that $g$ is surjective, due to which we have that $$\forall z \in A, \exists x \in C \text{ such that } g(x) = z$$
+      We combine the above 2 to get - 
+      $$\forall y \in B, \exists x \in C \text{ such that } f\circ g(x) = y$$
+}
+\end{frame}
+\begin{frame}{}
+\footnotesize{
+    \\ \textbf{0.2:}  $f^{-1}(A - B) = f^{-1}(A) - f^{-1}(B)$.
+    \\ \textbf{Sol:}
+    \begin{align*}
+        & x \in f^{-1}(A - B)
+        \\ & \implies f(x) \in (A - B)
+        \\ & \implies (f(x) \in A) \land (f(x) \notin B)
+        \\ & \implies (x \in f^{-1}(A)) \land (x \notin f^{-1}(B))
+        \\ & \implies x \in f^{-1}(A) - f^{-1}(B)
+    \end{align*}
+    Thus $f^{-1}(A - B) \subseteq f^{-1}(A) - f^{-1}(B)$
+    \begin{align*}
+        & x \in f^{-1}(A) - f^{-1}(B)
+        x \in f^{-1}(A - B)
+        \\ & \implies (x \in f^{-1}(A)) \land (x \notin f^{-1}(B))
+        \\ & \implies (f(x) \in A) \land (f(x) \notin B)
+        \\ & \implies (f(x) \in A) \land (f(x) \notin B)
+        \\ & \implies x \in f^{-1}(A) - f^{-1}(B)
+    \end{align*}    
+    Thus $f^{-1}(A) - f^{-1}(B) \subseteq f^{-1}(A - B)$
+}
+\end{frame}
+
+\begin{frame}{}
+    \\ \textbf{0.3:} Prove that the statement 
+    
+    $$h(f(x)) = k(f(x)) \implies h = k$$
+    
+    implies $f$ is onto.
+    \\ \textbf{Sol:} Assume that $f$ is not onto and that $h(f(x)) = k(f(x))$. Now we should be able to deduce that $h(y) = k(y) \forall y \in B$. We construct $h ,k$ such that 
+    \begin{align*}
+     h(y) &= c_0 \forall y \in B   
+     \\ k(y) &= \begin{cases}
+            c_0 \text{ if $y \in Range(f)$}
+            \\ c_1 \text{ otherwise}
+                \end{cases}
+    \end{align*}
+     (where $c_0$ and $c_1$ are 2 distinct). By this construction, we have $h(f(x)) = k(f(x))$, but $h \neq k$. Which means our assumption should have been wrong.
+\end{frame}
+
+\begin{frame}{}
+    \\ \textbf{0.4:} Let $f,g:\mathbb{N} \rightarrow \mathbb{N},f(x)=x^2,g(x)=x^3$.  Prove that the sets $Range(f)$ and $Range(g)$ have same cardinality.
+    \\ \textbf{Sol:} Construct a mapping $h$ from $Range(f) \rightarrow Range(g)$ such that  if $x \in Range(f)$ , then $h(x) = x^{\frac{3}{2}}$. It is easy to show that $h(x) \in Range(g)$. Now we prove that this mapping is injective and surjective. 
+    \\ For injective, if $h(x_1) = h(x_2)$, we have $x_1^{\frac{3}{2}} = x_2^{\frac{3}{2}}$, from which we get $x_1^3 = x_2 ^ 3$ which implies either $x_1 = x_2$ or $x_1^2 + x_2^2 + x_1x_2 = 0$. We know that $x_1^2 + x_2^2 + x_1x_2 > 0$, as they are in $\mathbb{N}$, thus $x_1 = x_2$.
+    \\ For surjective, for any $y \in Range(g)$, we have it's pre-image as $y^{\frac{2}{3}}$ as $h(y^{\frac{2}{3}}) = (y^{\frac{2}{3}})^{\frac{3}{2}} = y$. 
+    
+    \\ Thus the mapping is bijective and the cardinalities are same.
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}{Question 1}
+    Let a permutation $p$ be :- 
+    \begin{align*}
+        \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7\\ 2 & 1 & 5 & 6 & 7 & 3 & 4
+        \end{pmatrix}
+    \end{align*}
+    \begin{enumerate}
+        \item Let $q$ be defined as 
+        \begin{align*}
+        \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7\\ 5 & 7 & 4 & 3 & 1 & 2 & 6
+        \end{pmatrix}            
+        \end{align*}
+        Find the permutation $q \circ p$.
+        \\ \textbf{Sol:}
+        \begin{align*}
+            q \circ p &= \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 
+            7 & 5 & 1 & 2 & 6 & 4 & 3
+            \end{pmatrix}
+        \end{align*}
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{}
+    \begin{enumerate}\setcounter{enumi}{1}
+        \item Identify all the cycles in $p$.
+        \\ \textbf{Sol:} 
+        \begin{align*}
+            p &= (1,2)(3,5,7,4,6)
+        \end{align*}
+        \item How many transpositions are there in $p$ ? $p$ an odd or even permutation ? 
+        \begin{align*}
+             p &= (1,2)(3,5,7,4,6)
+             \\ &= (1,2)(3,6)(3,5,7,4)
+             \\ &= (1,2)(3,6)(3,4)(3,5,7)
+             \\ &= (1,2)(3,6)(3,4)(3,7)(3,5)
+        \end{align*}
+        Odd permutation (5 transpositions)
+        \item [*] Can you give a general formula for number of transpositions ?
+        \\ \textbf{Sol:} The number of transpositions in a k-cycle in generally k - 1.
+    \end{enumerate}
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}{Question 2}
+\textbf{2.1:} Show that the sets $S = \{x \in \mathbb{C},  |x| = 1 \}$ and $\mathbb{R}$ have same cardinality.
+\\ \textbf{Sol:} For each element $ x \in S$, we can have it as - 
+\begin{align*}
+    x &= e ^{i \theta}
+\end{align*}
+For each $\theta$, have a function $f$ which maps it as follows - 
+\begin{align*}
+    f(\theta) &= tan\bigg(\frac{\theta}{2}\bigg)
+\end{align*}
+The function above is injective and surjective. Note that the point $-1$ will not be representable. From the construction, we have cardinality of $S - \{-1\}$ equal to that of $\mathbb{R}$. The cardinality of $S - \{-1\}$ is equal to that of $S$, as adding a finite set to an infinite set does not change the cardinality. Thus we have cardinality of $S$ equal to that of $\mathbb{R}$. 
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 3}
+%------------------------------------------------
+
+\begin{frame}{Question 3}
+Let $A = \{x \in \mathbb{R}| x \in [0,1] \}$
+\\ $B = \{x \in \mathbb{N} | x \text{ is a perfect square}\}$
+\\ $C = \{x \in \mathbb{N} | x < 10\}$
+\\ Which of the following are countable ?
+\begin{enumerate}
+    \item $B \cap C$
+    \\ \textbf{Sol:} $B \cap C = \{1,4,9\}$ which is finite and hence countable. 
+    \item $B \cup C$
+    \\ \textbf{Sol:} Construct $f$ such that $f: \mathbb{N} \rightarrow \mathbb{N}$, $f(2) = 1, f(3) = 2, f(5) = 3, f(6) = 4, f(7) = 5, f(8) = 6$ and $\forall n \in B, f(n) = \sqrt{n} + 6 $. We notice that $f$ is injective as it maps uniquely to each $n \in N$, and surjective as well since we are denumerating the elements.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{}
+    \begin{enumerate}\setcounter{enumi}{2}
+    \item $A \cup B$
+    \\ \textbf{Sol:} (In this proof I am assuming $B$ is uncountable. Please refer to the slides for the proof.) 
+    \\ Assume $A \cup B$ is countable. Then $\exists f:(A \cup B) \rightarrow \mathbb{N}$. But from here, we are able to construct a function $g:B \rightarrow X$ such that $\forall b \in B, g(b) = f(b)$, and that $X \subseteq \mathbb{N}$. Since $\mathbb{N}$ is countable, we must have $X \subseteq \mathbb{N}$ also as countable. Cardinality of $B$ is same as $X$ as $g$ is a bijective map from $B$ to $X$, and so $B$ must also be countable . This is a contradiction and hence $A \cup B$ must be uncountable.
+    \item $A \cap B$
+    \\ \textbf{Sol:} $A \cap B = \{1\}$ which is finite and hence countable.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{}
+\footnotesize{
+\begin{enumerate}\setcounter{enumi}{4}
+    \item $\mathcal{P}(B)$
+    \\ \textbf{Sol:} We use Cantor's diagonalization argument over here. Let us define a new representation  of a subset $S_i$ of $B$ such that 
+    $$S_i &= x_{i1} x_{i2} x_{i3} x_{i4} \ldots $$ 
+    where $x_{ij} = e_{S_i}(j^2)$. For example, if $A = \{4,9\}$. We have representation as $$repr(A) = 01100000\ldots$$
+    Now since $\mathcal{P}(B)$ is countable, we should be able to list each of the subsets as - 
+    \begin{align*}
+        repr(S_1) &= x_{11} x_{12} x_{13} x_{14} \ldots 
+        \\ repr(S_2) &= x_{21} x_{22} x_{23} x_{24} \ldots 
+        \\ repr(S_3) &= x_{31} x_{32} x_{33} x_{34} \ldots 
+        \\ repr(S_4) &= x_{41} x_{42} x_{43} x_{44} \ldots 
+        \\ \vdots
+    \end{align*}
+    Now construct 
+    $$S = \{\overline{x}_{11} \overline{x}_{22} \overline{x}_{33} \ldots \}$$
+    We notice that $S$ is not in any of the $S_1, S_2, S_3 \ldots$ we listed. Thus our assumption must be wrong that  $\mathcal{P}(B)$ is countable. Hence it must be uncountable.
+\end{enumerate}    
+}
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 4}
+%------------------------------------------------
+\begin{frame}{Question 4}
+
+
+\footnotesize{
+\begin{multicols}{2}
+
+    \textbf{4.1}: Find left and right inverses of each of them (wherever exist) - 
+    \begin{enumerate}
+        \item $f: \mathbb{N} \rightarrow \mathbb{N}$, $f(n) = n + 3$
+        \\ \textbf{Sol:} Since $2 \notin \text{Range}(f)$, it is not onto. It is one-one. Left-inverse could be - $g(n) =  n - 3$.
+        \item $f: \mathbb{Z} \rightarrow \mathbb{E}^*, f(x) = |x| +  x$
+        \\ \textbf{Sol:} Since $f$ is not one-one but onto, the right inverse could be $g(x) = \frac{|x|}{2}$.
+    \end{enumerate}
+    \textbf{4.2}: Which of the following is/are projections - 
+    \begin{enumerate}
+        \item $f(x) = e^x$,$f: \mathbb{R} \rightarrow \mathbb{R}$ \textbf{No}, $e^{e^x} \neq e^x$.
+        \item $||x||$, $f: \mathbb{C} \rightarrow \mathbb{C}$ \textbf{Yes}, $||(||x||)|| = ||x||$.
+        \item $\floor{x}$, $f: \mathbb{Z} \rightarrow \mathbb{Z}$ \textbf{Yes} $\floor{\floor{x}} = \floor{x}$.
+    \end{enumerate}
+    \textbf{4.3:} Find $\sum_{j = 1}^{j = 100} e_{S}(j)$ on $U = \mathbb{Z}$, when $f(x) = x^2,S = Range(f(x))$,$f: \mathbb{R} \rightarrow \mathbb{R}$.
+    \\ \textbf{Sol:} We have this as 
+    \begin{align*}
+        & \sum_{i = 1}^{i=100} e_S(k) k 
+        \\ &= 10
+    \end{align*}
+    Note that $e_s(j) = 1$ only for $j \in \{1,4,9,16,25,36,49,64,81,100\}$.
+\end{multicols}    
+}
+\end{frame}
+
+
+\end{document} 

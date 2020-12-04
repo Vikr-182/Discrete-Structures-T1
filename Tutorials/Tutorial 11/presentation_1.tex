@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\long\def\/*#1*/{}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 11} % Your email address
+}
+\date{October 21, 2020} % Date, can be changed to a custom date
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+\/*
+%------------------------------------------------
+\subsection{Question 0}
+%------------------------------------------------
+\begin{frame}{Question 0}
+    \\ \textbf{0.1:} $f \circ g$ is bijective $\iff f,g$ are bijective.
+    \\ \textbf{0.2:}  $f^{-1}(A - B) = f^{-1}(A) - f^{-1}(B)$.
+    \\ \textbf{0.3:} Prove that  the statement 
+    
+    $$h(f(x)) = k(f(x)) \implies h = k$$
+    
+    implies $f$ is onto.
+    \\ \textbf{0.4:} Let $f,g:\mathbb{N} \rightarrow \mathbb{N},f(x)=x^2,g(x)=x^3$.  Prove that the sets $Range(f)$ and $Range(g)$ have same cardinality.
+\end{frame}
+*/
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}{Question 1}
+    Let a permutation $p$ be :- 
+    \begin{align*}
+        \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7\\ 2 & 1 & 5 & 6 & 7 & 3 & 4
+        \end{pmatrix}
+    \end{align*}
+    \begin{enumerate}
+        \item Let $q$ be defined as 
+        \begin{align*}
+        \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 & 7\\ 5 & 7 & 4 & 3 & 1 & 2 & 6
+        \end{pmatrix}            
+        \end{align*}
+        Find the permutation $q \circ p$.    
+        \item Identify all the cycles in $p$.
+        \item How many transpositions are there in $p$ ? $p$ an odd or even permutation ? 
+        \/*\item [*] Can you give a general formula for number of transpositions ?*/
+    \end{enumerate}
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}{Question 2}
+\textbf{2.1:} Show that the sets $S = \{x \in \mathbb{C},  |x| = 1 \}$ and $\mathbb{R}$ have same cardinality.
+\/*\\ \textbf{2.2 :} In a ludo game, a die is rolled until the first time $6$ arrives. The sequence of numbers $s_K = \{n_1,n_2 \ldots n_K\}$ is noted ($n_K = 6$, none of $n_1, n_2, \ldots n_{K-1} = 6$. Let 
+\begin{align*}
+    \text{Set }S = \{ \text{All such possible sequences } s_i \}
+\end{align*}
+Is $S$ countable ?
+*/
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Question 3}
+%------------------------------------------------
+
+\begin{frame}{Question 3}
+Let $A = \{x \in \mathbb{R}| x \in [0,1] \}$
+\\ $B = \{x \in \mathbb{N} | x \text{ is a perfect square}\}$
+\\ $C = \{x \in \mathbb{Z} | x < 10\}$
+\\ Which of the following are countable ?
+\begin{enumerate}
+    \item $B \cap C$
+    \item $B \cup C$
+    \item $A \cup B$
+    \item $A \cap B$
+    \item $\mathcal{P}(B)$
+    \\ [*]  The cardinality of $P(A)$ set is same as that of $P(B)$ ....
+        \\ \footnotesize{\textit{\href{https://www.youtube.com/watch?time\_continue=856&v=SrU9YDoXE88&feature=emb\_logo}{Or is it?}}}
+        
+\end{enumerate}
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Question 4}
+%------------------------------------------------
+\begin{frame}{Question 4}
+\footnotesize{
+    \textbf{4.1}: Find left and right inverses of each of them (wherever exist) - 
+    \begin{enumerate}
+        \item $f: \mathbb{N} \rightarrow \mathbb{N}$, $f(n) = n + 3$
+        \/*\item $f:\mathbb{Z} \rightarrow \mathbb{Z}, f(x) = \begin{cases} x \text{ when x is even.}\\ 4x + 1 \text{ when x is odd.}\end{cases}$.*/
+        \item $f: \mathbb{Z} \rightarrow \mathbb{E}^*, f(x) = |x| +  x$ . $E^*$ is the set of even numbers.
+    \end{enumerate}
+    \textbf{4.2}: Which of the following is/are projections - 
+    \begin{enumerate}
+        \item $f(x) = e^x$,$f: \mathbb{R} \rightarrow \mathbb{R}$ 
+        \/*\item $f(x) = ||x||$, $f: \mathbb{C} \rightarrow \mathbb{C}$ */
+        \item $f(x) = \floor{x}$, $f: \mathbb{Z} \rightarrow \mathbb{Z}$
+    \end{enumerate}
+    \textbf{4.3:} Find $\sum_{j = 1}^{j = 100} e_{S}(j)$ on $U = \mathbb{Z}$, when $f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = x^2$  and  $S = Range(f(x))$. Recall what $e_s(j)$ meant.
+}
+\end{frame}
+
+
+\end{document} 

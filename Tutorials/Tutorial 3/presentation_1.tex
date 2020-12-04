@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=White}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 3} % Your email address
+}
+\date{September 23, 2020} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Instructions}
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Instructions}
+We will be having a test quiz to increase your familiarity with Moodle. This is NOT GRADED. You don't need to mail them to sir in case you have not submitted.
+\begin{enumerate}
+    \item Go to the "Tutorial 3 Submission" under the \textbf{Tutorials} Section on Moodle.
+    \item A pdf named "Tutorial 3" would be there in the portal. 
+    \item Please download it and solve the questions \textbf{1, 2.1 and 2.2} . You \textbf{may not} submit Question 0.
+    \item Upload your scanned answers by \textbf{1:25PM}. We would start discussing their solutions by then.
+\end{enumerate}
+\end{frame}
+
+
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 0}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 0}
+\textbf{0.1} In the following condition, when is it equal?
+\begin{center}
+     $(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$ 
+\end{center}
+\textbf{0.2} Find the number of primes between 40 - 100 using PRT.
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 1}
+
+Simplify the following - 
+\begin{enumerate}
+    \item $\big(A - (B \cup C)\big) \cap \big((B \cap C) - A\big)$
+    \item $(A \cap B') \cup (A' \cap B) \cup (A' \cap B')$
+\end{enumerate}
+\end{frame}
+\subsection{Question 2}
+\begin{frame}
+\frametitle{Question 2}
+\begin{multicols}{2}
+\footnotesize{ 
+\textbf{2.1} $A$ is the set of people who go to resort area for vacation, $B$ is the set of people who take cruise for vacation, $C$ is the set of people who go to national park for vacation. Suppose $|A| = 150, |B| = 100$ and $|C|=300$
+}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{dstut3q2.png}
+\end{figure}
+\footnotesize{
+\textbf{a.} How many people only go to a resort area for vacation? \\
+\textbf{b.} How many people only take a cruise for vacation? \\
+\textbf{c.} How many people only go to national park for vacation? \\
+\textbf{d.} How many people either go to a resort area or take a cruise for vacation but not national park? \\
+\textbf{e.} How many people use any of the 3 methods to take a vacation? \\
+}
+\end{multicols} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Question 2 (contd.)}
+\begin{multicols}{2}
+\small{
+\textbf{2.2} Observe the values of the table and find the number of students who:
+\begin{center}
+\begin{figure}
+    \includegraphics[width=\linewidth]{dstut3q2table.png}
+\end{figure}
+\end{center}
+\textbf{a.} Like strawberry ice cream and tapioca pudding \\
+\textbf{b.} Do not like pudding \\
+\textbf{c.} Like at least one of the ice cream flavours \\
+\textbf{d.} Like neither ice cream nor pudding\\
+\vspace{1mm}
+\hline
+\vspace{1mm}
+\textbf{2.3} Mark the following as true or false:
+\textbf{a.} $26 \in \mathbb{Z}  $\\
+\textbf{b.} $-5 \in \mathbb{N}  $\\
+\textbf{c.} $\sqrt{2} \notin \mathbb{Q} \cap \mathbb{R}$ \\
+\textbf{d.} $\mathbb{Z} \cup \mathbb{Q} = \mathbb{R}$ \\
+\textbf{e.} $\mathbb{R} \cap \mathbb{C} = \mathbb{R}$ \\
+}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quiz conducted on 22 Sept 2020}
+Any doubts ?
+\begin{enumerate}
+    \item If $B$ is finite set and $A \subseteq B$ such that $|A| = |B|$, then prove, without using Venn-Euler's diagram, that $A = B$.
+    \item In a hostly fought battle at least 70\% of the combatants lost an eye, at least 75\% an ear, at least 80\% an arm and at least 85\% a leg. What is the least number of combatants who lost all four members?
+\end{enumerate}
+\end{frame}
+\end{document} 

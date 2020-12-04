@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 2} % Your email address
+}
+\date{September 21, 2020} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 0}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 0}
+If $|A|$ = $m$ and $|B|$ = $n$ and $A$ and $B$ are not mutually disjoint. Let
+\begin{align*}
+\mathcal{P}_i(S) = \mathcal{P}(\mathcal{P}(\mathcal{P}\ldots \mathcal{P}(S)))) \text{  \textit{i}}  \text{    times}
+\end{align*}
+Comment on the value of $|\mathcal{P}_4(A-B) -  \mathcal{P}_2(A-B)|$.
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 1}
+\textbf{1.1} Prove the following using basic set identities - 
+\begin{enumerate}
+    \item $((A - B) - (B - C))' = A' \cup B$
+    \item $\big(A \cap (A - B )\big)\cup(A' \cup B)'= A - B$
+    \item $A \cup (B - C) = (A \cup B) - (C - A)$
+    \item $A \Delta (B \Delta C) = (A \Delta B) \Delta C$
+\end{enumerate}
+\textbf{1.2} Prove the following using element of argument - 
+\begin{enumerate}
+    \item $(A \times B) \cap (C \times D) = (A \cap B) \times (C \cap D)$
+    \item $(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$  
+\end{enumerate}
+
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 2}
+\begin{multicols}{2}
+[
+To answer please visit the link (or click here): \href{https://tinyurl.com/dstut2}{\underline{tinyurl.com/dstut2}}
+]
+\textbf{2.1}: Odd one out (ONLY ONE)
+\begin{enumerate}
+    \item $\{(a,b) | (a^2 = 1) \land (b^2 = 4)\}$
+    \item $\{-1,-2,2,4\}$
+    \item $(\{-1,1\} \times \{-2,2\}) - \phi$
+    \item $(\{-1,1\} \times \{-2,2\}) \cup \phi$
+\end{enumerate}
+
+\textbf{2.2}: Select the false statements:
+\begin{enumerate}
+    \item $\mathcal{P}(A \times B) = \mathcal{P}(A) \times \mathcal{P}(B)$
+    \item $\mathcal{P}(A \cap B) = \mathcal{P}(A) \cap \mathcal{P}(B)$
+    \item $\mathcal{P}(A \cup B) = \mathcal{P}(A) \cup \mathcal{P}(B)$
+    \item $\mathcal{P}(A - B) = \mathcal{P}(A) - \mathcal{P}(B)$
+\end{enumerate}
+\textbf{2.3}: Find number of primes between 40-100 using PRT.
+\vspace{2.5cm}
+
+\textbf{2.4}: $|U| = 20, |A| = 10, |B| = 5, |C| = 5, |A \cap B| = 2, |A \cap C| = 4, |B \cap C| = 1, |A \cap B \cap C| = 1$.
+\begin{enumerate}
+    \item $|A \cap B' \cap C| $
+    \item $|((A - B) \times C)|$
+    \item $|(A \Delta B) \cup (B \Delta C) |$
+\end{enumerate}
+
+\textbf{2.5}: Use inclusion exclusion principle to find numbers less than 1000 divisble by none of 2,3 or 5.
+
+\end{multicols}
+\end{frame}
+
+\end{document} 

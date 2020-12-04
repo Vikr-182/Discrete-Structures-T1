@@ -1,0 +1,256 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 4} % Your email address
+}
+\date{September 28, 2020} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 1}
+Prove the following - 
+\begin{enumerate}
+    \item  $(R \cap S)^{-1} = R^{-1} \cap S^{-1}$
+    \\ \textbf{Sol:}
+    \begin{align*}
+        & (a,b) \in {(R \cap S)}^{-1} & 
+        \\ & \implies (b,a) \in (R \cap S) &
+        \\ & \implies ((b,a) \in R) \land ((b,a) \in S) &
+        \\ & \implies ((a,b) \in R^{-1}) \land ((a,b) \in S^{-1}) &
+        \\ & \implies (a,b) \in (R^{-1} \cap S^{-1}) &
+    \end{align*}
+    \begin{align*}
+        & (a,b) \in (R^{-1} \cap S^{-1}) & 
+        \\ & \implies ((a,b) \in R^{-1}) \land ((a,b) \in S^{-1}) &
+        \\ & \implies ((b,a) \in R) \land ((b,a) \in S) &
+        \\ & \implies (b,a) \in (R \cap S) &
+        \\ & (a,b) \in {(R \cap S)}^{-1} &
+    \end{align*}    
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{}
+\begin{enumerate} \setcounter{enumi}{1}
+    \item  $R,S$ are symmetric $\implies$ $R \cap S$ is symmetric.
+    \\ \textbf{Sol:}
+    \begin{align*}
+        & (R \cap S)^{-1} &
+        \\ &= R^{-1} \cap S^{-1}&
+        \\ &= R \cap S
+    \end{align*}
+    which implies that $R \cap S$ is symmetric.
+    \item  $R$ is transitive $\implies$ $R^{-1}$ is transitive.
+    \\ \textbf{Sol:} Suppose if not, then $ \exists (a,b) \in R^{-1}$ and $(b,c) \in R^{-1}$. But $(a,c) \notin R^{-1}$. We take inverse of them, $(b,a) \in R$ and $(c,b) \in R$, but now we have $(c,a) \in R$, which means $(a,c) \in R$ which is contradiction. Hence it is transitive.
+    \item  \textbf{*} [$R,S$ are transitive $\implies$ $R \cap S$ is transitive.]
+
+\end{enumerate}
+
+\end{frame}
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 2}
+To answer the questions visit:  \href{https://tinyurl.com/dstut4}{\underline{tinyurl.com/dstut4}}\\
+\textbf{2.1:} State true or false
+\begin{enumerate}
+    \item If $R$ and $S$ are transitive, $R \cup S$ not always transitive. 
+    \\ \textbf{Sol:} True, take $R = \{(a,b), (b,c),(a,c)\}$ and $S = \{(c,d),(d,a),(c,a
+    )\}$ defined on $A = \{a,b,c,d\}$. Since $(a,c) \in (R \cup S)$ and $(c,d) \in (R \cup S)$ but $(d,a) \noitin (R \cup S)$\\
+    If it is symmetric, then $(a,b) \in R$ and $(b,a) \in $R, which means $(a,a) \in R$ by transitive rule. Thus reflexive and equivalent.
+    \item Every relation must either be symmetric or anti-symmetric.
+    \\ \textbf{Sol:} False \\
+    Take the relation on set $S = \{a,b,c\}$, $R = \{(a,b),(b,a),(b,c)\}$. This is not symmetric as $(c,b) \notin R$ and not anti-symmetric as $(b,a) \in R$ and $(a,b) \in R$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\textbf{2.2:} Mark as Reflexive, Symmetric, Anti-symmetric and/or Transitive.
+\begin{enumerate}
+    \item $S = \mathbb{C},\text{ } _{x}R_{y} \iff x^2 + y^2 = 1$
+    \\ \textbf{Sol:} Symmetric.
+    \item $S = \mathbb{R}^2,\text{ } _{(a,b)}R_{(c,d)} \iff a + d = b + c$
+    \\ \textbf{Sol:} Reflexive, Symmetric, Transitive.
+    \item $S$ = The set of all lines the plane $\mathbb{R} \times \mathbb{R}$, $_{l}R_{m} \iff l \parallel m$ 
+    \\ \textbf{Sol:} Reflexive, Symmetric, Transitive.
+    \item $S$ = The powerset of \{1,2,3 \ldots 10\}. $_{A}R_{B} \iff A \subseteq B$ 
+    \\ \textbf{Sol:} Reflexive, Anti-Symmetric and Transitive.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+Explanations - 
+\begin{enumerate}
+    \item Not reflexive as $(0,1) \in {R}$, but $(0,0) \notin {R}$. 
+    \\ $(x,y) \in R \implies x^2 + y^2 = 1 \iff y^2 + x^2 = 1 \implies (y,x) \in R$. 
+    \\ Not transitive as $(0,1) \in R, (1,0) \in R$ but $(0,0) \notin R$.
+    \item $_{(a,b)}R_{(a,b)}$ as $a + b = a + b \forall (a,b) \in \mathbb{R}^2$.
+    \\ $_{(a,b)}R_{(c,d)} \implies a + d = b + c \iff _{(c,d)}R_{(a,b)}$.
+    \\ $_{(a,b)}R_{(c,d)} \land _{(c,d)}R_{(e,f)} \implies ((a + d = c + b) \land (c + f = d + e)) \implies ((a - b = c - d) \land (c - d = e - f)) \implies (a + f = b + e) \implies _{(a,b)}R_{(e,f)}$.
+    \item $l \parallel l$ by definition.
+    \\ $l \parallel m \iff m \parallel l$ by definition.
+    \\ $(l \parallel m) \land (m \parallel n) \implies (l \parallel n)$.
+    \item $A \subseteq A$ by definition.
+    \\ $A \subset B$, then $B \not\subset A$. Thus it has to be anti-symmetric.
+    \\ $A \subseteq B, B \subseteq C$, then we have $(\forall x)(x \in A) \implies (x \in B)$ and $(\forall x)(x \in B) \implies (x \in C)$, thus we have, $(\forall x)(x \in A) \implies (x \in C)$ which means $A \subseteq C$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\textbf{2.2:} A set $S$ has $3$ elements. Find -  
+\begin{enumerate}
+    \item Number of binary relations.
+    \\ \textbf{Sol:} $2^{3 \times 3}$ = 512
+    \item Number of anti-symmetric relations.
+    \\ \textbf{Sol:} $2^{3} 3^{3}$ = 216.
+    \item Number of equivalent relations.
+    \\ \textbf{Sol:} $S(3,1) + S(3,2) + S(3,3) = 2 + S(2,1) + 2\cdot S(2,2) = 5$
+    \item Number of relations neither symmetric nor antisymmetric.
+    \\ \textbf{Sol:} $512 - (216 + 64) = 232$
+\end{enumerate}
+\end{frame}
+
+
+
+
+%------------------------------------------------
+\subsection{Question 3}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 3}
+\begin{enumerate}
+    \item Let $R$ be a symmetric and transitive relation on a set $A$. Show that if for every $a$ in $A$ there exists $b$ in $A$ such that $(a, b)$ is in $R$, then $R$ is an equivalence relation. \\
+    \textbf{\underline{Sol:}} Since $R$ is symmetric, if $(a, b) \in R \implies (b, a) \in R$ and since $R$ is transitive, $(a, b) \in R, (b, a) \in R \implies (a, a) \in R$ and this argument is true $\forall a \in A$. Therefore $R$ is reflexive.\\ 
+    Hence $R$ is an equivalence relation.
+\end{enumerate}
+\end{frame}
+\end{document} 

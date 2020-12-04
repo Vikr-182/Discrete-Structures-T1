@@ -1,0 +1,332 @@
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 13} % Your email address
+}
+\date{November 2, 2020} % Date, can be changed to a custom date
+\newcommand{\comment}[1]{}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+
+\begin{frame}{Question 1}
+    \textbf{1.1} Given twelve integers, show that two of them can be chosen so that their difference is divisible by 11.
+    
+    \textbf{1.2} Twenty-five crates of apples are delivered to a store. The apples are of three sorts, and all the apples within a crate are of the same sort. Show that among these crates there are at least 9 containing the same sort. 
+    
+    \textbf{1.3*} Show that for every integer $n$, there is a multiple of $n$ that has only $0$s and $1$s in the decimal expansion.
+    
+    \textbf{1.4*} Consider a chess board with two of the diagonally opposite corners removed. Is it possible to cover the board with pieces of domino whose size is exactly two board squares?
+\end{frame}
+
+\begin{frame}{Question 1 | Solutions}
+\small{
+    \textbf{1.1 \underline{Sol:}} When we divide a number by $11$, the total number of possible remainders are $11$ from $0$ to $10$. Now we will have $12$ number which will give us $12$ remainders when divided by $11$. \\
+    \textbf{Pigeon:} The remainders of the 12 numbers wrt 11 \\ 
+    \textbf{Pigeon-hole:} All possible remainders wrt 11\\
+    Thus we will see that two numbers of the 12 numbers will have the same remainder when divided by 11. Thus we can take the difference of those two numbers which will be a multiple of 11.
+    \vspace{2mm}
+    
+    \textbf{1.2 \underline{Sol:}} The following division into pigeons and pigeon-holes gives us the solution. \\
+    \textbf{Pigeon:} The crates of apples = 25\\
+    \textbf{Pigeon-hole:} The types of apples within the crates = 3\\
+    Then by the generalized Pigeon-hole principle we will have that $Nk + 1$ pigeons in $N$ pigeon holes, giving $k + 1$ pigeons in one pigeon-hole.\\ 
+    Thus we have $25 = 3 \times 8 + 1$ in $3$ pigeon-holes. Thus one apple type will have $9$ crates. We can also obtain the same result by building up one by one. 
+}
+\end{frame}
+
+\begin{frame}{Question 1 | Solutions}
+\small{
+    \textbf{1.3 \underline{Sol:}} Let $n$ be a positive integer. Let us take $n + 1$ integers, $1, 11, 111, 1111, \ldots$ (where the last integer in this list is an integer with n + 1 $1$s in its decimal expansion). Note that there are $n$ possible remainders when an integer is divided by an integer $n$. \\
+    \textbf{Pigeon:} The numbers of the sequence $\rightarrow  n + 1$ \\
+    \textbf{Pigeon-hole:} The possible remainders of n $\rightarrow  n$ \\
+    Thus by the pigeonhole principle there must be two with the same remainder when divide by n. The larger of these integers less the smaller one is a multiple of n, which has a decimal expansion consisting entirely of 0s and 1s.
+    \vspace{2mm}
+    
+    \textbf{1.4 \underline{Sol:}} The two diagonally opposite squares of the chessboard have the same color. Thus when we remove those two squares, we will have that the count of one color will be two lesser than the other one. However, each domino piece has one white square and one black square. Thus the count of the two squares will be always equal in a sequence of arranged dominoes. Thus it will not be possible to arrange a chessboard with dominoes.
+}
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+
+
+\begin{frame}{Question 2}
+    \textbf{2.1} How many cards must be selected from a standard deck of 52 cards to guarantee that at least three cards of the same suit are selected?
+    
+    \textbf{2.2} Suppose that a computer science laboratory has 15 workstations and 10 servers. A cable can be used to directly connect a workstation to a server. For each server, only one direct connection to that server can be active at any time. We want to guarantee that at any time any set of 10 or fewer workstations can simultaneously access different servers via direct connections. Although we could do this by connecting every workstation directly to every server (using 150 connections), what is the minimum number of direct connections needed to achieve this goal?
+\end{frame}
+
+\begin{frame}{Question 2 | Solutions}
+    \textbf{2.1 \underline{Sol:}} Suppose that there are four boxes, one for each suit, and as cards are selected they are placed in the box reserved for cards of that suit.  Using the generalized pigeonhole principle,we see that if N cards are selected, there is at least one box containing at least $\ceil{N/4}$ cards. Consequently, we know that at least three cards of one suit are selected if $\ceil{N/4} \geq 3$. The smallest integer N such that $\ceil{N/4}$ is $N = 2 \times 4 + 1 = 9$, so nine cards suffice. Note that if eight cards are selected, it is possible to have two cards of each suit, so more than eight cards are needed. Consequently, nine cards must be selected to guarantee that at least three cards of one suit are chosen. One good way to think about this is to note that after the eighth card is chosen, there is no way to avoid having a third card of some suit.
+\end{frame}
+
+\begin{frame}{Question 2 | Solutions}
+    \textbf{2.2 \underline{Sol:}} Suppose that we label the workstations $W_1, W_2, \ldots , W_{15}$ and the servers $S_1, S_2, \ldots , S_{10}$. First, we would like to find a way for there to be far fewer than 150 direct connections between workstations and servers to achieve our goal. One promising approach is to directly connect $W_k$ to $S_k$ for $k = 1, 2, \ldots , 10$ and then to connect each of $W_{11}, W_{12}, W_{13}, W_{14},$ and $W_{15}$ to all 10 servers. This gives us a total of $10 + 5 \times 10 = 60$ direct connections. We need to determine whether with this configuration any set of 10 or fewer workstations can simultaneously access different servers. We need to determine whether with this configuration any set of 10 or fewer workstations can simultaneously access different servers. We note that if workstation $W_j$ is included with $1 \leq j \leq 10$, it can access server $S_j$, and for each workstation $W_k$ with $k \geq 11$ included, there must be a corresponding workstation $W_j$ with $1 \leq j \leq 10$ not included, so $W_k$ can access server $S_j$. (This follows because there are at least as many available servers $S_j$ as there are workstations $W_j$ with $1 \leq j \leq 10$ not included.) So, any set of 10 or fewer workstations are able to simultaneously access different servers.
+\end{frame}
+
+\begin{frame}{Question 2 | Solutions}
+    \textbf{2.2 \underline{Sol (Contd.):}} But can we use fewer than 60 direct connections? Suppose there are fewer than 60 direct connections between workstations and servers. Then some server would be connected to at most $\floor{59/5} = 5$ workstations. (If all servers were connected to at least six workstations, there would be at least $6 \times 10 = 60$ direct connections.) This means that the remaining nine servers are not enough for the other 10 or more workstations to simultaneously access different servers. Consequently, at least 60 direct connections are needed. It follows that 60 is the answer. 
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 3}
+%------------------------------------------------
+
+
+\begin{frame}{Question 3}
+    \textbf{3.1*} Given 8 different natural numbers, none greater than 15, show that at least three pairs of them have the same positive difference (the pairs need not be disjoint as sets.) 
+    
+    \textbf{3.2*} During a month with 30 days, a baseball team plays at least one game a day, but no more than 45 games. Show that there must be a period of some number of consecutive days during which the team must play exactly 14 games.
+    
+    \textbf{3.3*} Show that whenever 25 girls and 25 boys are seated around a circular table there is always a person both of whose neighbors are boys.
+\end{frame}
+
+\begin{frame}{Question 3 | Solutions}
+    \textbf{3.1 \underline{Sol:}} There are 14 possible differences between the 8 given numbers (the values of the differences being 1 through 14). These are the 14 pigeon holes. But what are our pigeons? They must be the differences between pairs of the given numbers. However, there are 28 pairs, and we can fit them in our 14 pigeon holes in such a way that there are exactly two "pigeons" in each hole (and therefore no hole containing three). Here we must use an additional consideration. We cannot put more than one pigeon in the pigeon hole numbered 14, since the number 14 can be written.as a difference of two natural numbers less than 15 in only one way: 14 = 15 - 1. This means that the remaining 13 pigeon holes contain at least 27 pigeons, and the General Pigeon Hole Principle gives us our result.
+\end{frame}
+
+\begin{frame}{Question 3 | Solutions}
+    \textbf{3.2 \underline{Sol:}} Let $a_j$ be the number of games played on or before the $j^{th}$ day of the month. Then $a_1, a_2, \ldots, a_{30}$ is an increasing sequence of distinct positive integers, with $1 \leq a_j \leq 45$. Moreover, $a_1 + 14, a_2 + 14, \ldots , a_{30} + 14$ is also an increasing sequence of distinct positive integers, with $15 \leq a_j + 14 \leq 59$. (The motivation for this is that we have to show for any two days $a_i$ and $a_j$, $a_j = a_i + 14$, i.e. that we have exactly 14 matches between the two days)
+    
+    The 60 positive integers $a_{1}, a_{2}, \ldots , a_{30}, a_{1} + 14, a_{2} + 14, \ldots , a_{30} + 14$ are all less than or equal to 59. Hence, by the pigeonhole principle two of these integers are equal. Because the integers $a_j, j = 1, 2, \ldots , 30$ are all distinct and the integers $a_j + 14, j = 1, 2, \ldots , 30$ are all distinct, there must be indices i and j with $a_i = a_j + 14$. This means that exactly 14 games were played from day $j + 1$ to day $i$.
+\end{frame}
+
+\begin{frame}{Question 3 | Solutions}
+    \textbf{3.3 \underline{Sol:}} The key here is that 25 is an odd number. If there were an even number of boys and the same even number of girls, then we could position them around the table in the order BBGGBBGG ... and never have a person both of whose neighbors are boys. But with an odd number of each sex, that cannot happen. Here is one nice way to see why when there are 25 of each. Number the seats around the table from 1 to 50, and think of seat 50 as being adjacent to seat 1. There are 25 seats with odd numbers and 25 seats with even numbers. If no more than 12 boys occupied the odd-numbered seats, then at least 13 boys would occupy the even-numbered seats, and vice versa. Without loss of generality, assume that at least 13 boys occupy the 25 odd-numbered seats. Then at least two of those boys must be in consecutive odd-numbered seats. The person sitting between those two boys will have boys as both of his or her neighbors.
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 4}
+%------------------------------------------------
+
+\begin{frame}{Question 4}
+    \textbf{4.1:} Derive the generating function for the following - 
+    \begin{enumerate}
+        \item $a_r$ = (1,1,1,1 \ldots)
+        \item $a_r$ = (1,3,5,7 \ldots)
+        \item $a_r$ = (1,4,9,16 \ldots)
+    \end{enumerate}
+    \textbf{4.2:} Write the convolution of the following [closed form expression for length $7$] $a_r = 2^r, b_r = 5^r$.
+
+     \textbf{4.3:} Given the following, find $b$ such that $a*b=c$.
+        \begin{align*}
+        a_r &= \begin{cases}
+        1 \text{ r = 0}
+        \\ 2 \text{ when r = 1}
+        \\ 0 \text{ when r $\geq$  1}
+        \end{cases}
+              \\ c_r &= \begin{cases}
+        1 \text{ r = 0}
+        \\ 0 \text{ when r $\geq$  1}
+        \end{cases}
+        \end{align*}
+\end{frame}
+
+\begin{frame}{Question 4 | Solutions}
+    \textbf{4.1 \underline{Sol:}}
+
+    \textbf{a.} We have to find the generating function for the sequence $a_r = (1, 1, 1, 1, \ldots)$. 
+    \begin{align*}
+        A &= 1 + &x + x^2 + x^3 + x^4 + x^5 + \ldots \\
+        xA &= &x + x^2 + x^3 + x^4 + x^5 + \ldots \\
+        (1 - x)A &= 1 \\
+        A &= \frac{1}{(1 - x)}
+    \end{align*}
+    Thus the answer is $A = 1/(1-x)$
+\end{frame}
+
+\begin{frame}{Question 4 | Solutions}
+    
+    \textbf{b.}
+    We need to find the generating function for the sequence $a_r = (1, 3, 5, 7, 9, \ldots)$
+    \begin{align*}
+        A &= 1 + &3x + 5x^2 + 7x^3 + 9x^4 + \ldots \\
+        xA &= &x + 3x^2 + 5x^3 + 7x^4 + \ldots \\
+        (1 - x)A &= 1 + &2x^2 + 2^3 + 2x^4 + \ldots \\
+    \end{align*}
+    
+    Now, 
+    \[
+        2x + 2x^2 + 2x^3 + \ldots = \frac{2x}{1 - x}
+    \]
+    Thus, 
+    \begin{align*}
+        (1 - x)A &= 1 + \frac{2x}{1 - x} \\
+        A &= \frac{1 + x}{(1 - x)^2}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Question 4 | Solutions}
+    \textbf{c.} We have to find the generating function for the sequence $a_r = (1, 4, 9, 16, \ldots)$
+    \begin{align*}
+        A &= 1 + &4x + 9x^2 + 16x^3 + 25x^4 + \ldots \\ 
+        xA &= &x + 4x^2 + 9x^3 + 16x^4 + \ldots \\
+        (1-x)A &= 1 + &3x + 5x^2 + 7x^3 + 9x^4 + \ldots
+    \end{align*}
+    Now from the previous section 
+    \[
+        1 + 3x + 5x^2 + 7x^3 + 9x^4 + \ldots = \frac{1 + x}{(1 - x)^2}
+    \]
+    So we have 
+    \begin{align*}
+        (1 - x)A &= \frac{1 + x}{(1 - x)^2} \\
+        A &= \frac{1 + x}{(1 - x)^3}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Question 4 | Solutions}
+    \textbf{4.2 \underline{Sol:}} The convolution operation is defined as: 
+    \[
+        c = \sum_{i = 0}^{r} a_i b_{r - i}
+    \]
+    So we have 
+    \begin{align*}
+        c &= \sum_{i = 0}^6 2^i 5^{7-i}
+        \\ &= 25999
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Question 4 | Solutions}
+    \textbf{4.3 \underline{Sol:}} 
+    We have 
+    \begin{align*}
+        A(z) &= 1z^0 + 2z^1 + 0z^2 + \ldots
+        \\ C(z) &= 1 + 0z^1 + \ldots
+    \end{align*}
+        \begin{align*}
+            C(z)  &=  A(z)B(z)
+            \\ (1) &= (1 + 2z) B(z)
+            \\ B(z) &= \frac{1}{1 - (-2)z}
+        \end{align*} 
+        Thus we get $b_r = (-2)^{r}$
+\end{frame}
+
+
+\end{document} 

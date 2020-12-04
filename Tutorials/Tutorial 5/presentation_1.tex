@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 5} % Your email address
+}
+\date{September 30, 2020} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 0}
+%------------------------------------------------
+\begin{frame}{Question 0}
+    \textbf{0.1:} Prove that if $R,S$ are transitive $\implies$ $R \cap S$ is transitive.
+    \\ \textbf{0.2:} Let $R$ be a reflexive relation on set $A$. Show that $R$ is an equivalence relation if and only if $(a, b)$ and $(a, c)$ are in $R$ implies that $(b,c)$ is in $R$.
+\end{frame}
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 1}
+\textbf{1.1: } Find $\phi(120)$.
+\\ \textbf{1.2: } Find a number $a < p$ such that $a \cdot p = 1 \text{ mod}(p)$ (modular inverse) without using any online tools. ($p = 31, a = 12$). 
+\\ $[$Hint: Use Extended Euclid's Division Algorithm]
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Question 2}
+An encoding scheme is defined as follows - 
+\\ A = 00, B = 01, C = 02 and so on, and 00 for space. Take $p = 13, q = 17$ and the public key ($e$) as 5.
+\begin{enumerate}
+    \item Find the private key.
+    \item Find the ciphertext of the message "HI ALL".
+    \item Decrypt the ciphertext to verify the same.
+\end{enumerate}
+
+\end{frame}
+
+
+%------------------------------------------------
+\subsection{Doubts}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Any doubts in Assignment}
+\begin{enumerate}
+    \item If $A, B \text{ and } C$ are any three sets,  then prove that $(A\Delta B)\Delta C=A\Delta(B\Delta C)$ without apply the Venn-Euler’s diagram, where $\Delta$ denotes the symmetric difference operation between two sets.
+    \item If $A= \{ n \in \mathbb{N}: n \text{ is a multiple of 12}\}$ and B = $\{n \in \mathbb{N}:n \text{ is a multiple of 18}\}$, find (i)$A \cup B$,(ii)$A \cap B$, (iii)$(A \cup B)−(B \cap A)$, (iv)$A \times B$ and (v)$P(A \cup B)$
+    \item  Let U be the set of all quadrilaterals in a plane, and P, R, T and S are the subsets of U defined as follows:
+   
+    •P=set of all parallelograms
+    
+    •R=set of all rhombus
+    
+    •T=set of all rectangles
+    
+    •S=set of all squares
+    
+    Find the relationships between P, R, T and S in terms of containment.
+\end{enumerate}
+\end{frame}
+\begin{frame}{}
+\begin{enumerate}\setcounter{enumi}{3}
+        \item In a survey of 100 delegates attending a conference on Discrete Structures held at IIIT Hyderabad,the number of delegates who knew one or more of the 3 languages: English, French and Germany,was as follows: English 28, French 30, Germany 42; English and Germany 10; English and French 8; French and Germany 5. Only 3 people know all the three languages.
+    
+    •How many did not know any language at all?
+    
+    •How many knew only Germany?
+    \item Prove or disprove the following statements.
+    
+    •$(A - B) \times C= (A \times C) - (B \times C)$
+    
+    •$(A \Delta B) \times C= (A \times C) \Delta (B \times C)$
+\end{enumerate}
+
+\end{frame}
+\end{document} 

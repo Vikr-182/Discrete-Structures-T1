@@ -1,0 +1,235 @@
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor=svgnames]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes}
+%\usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen}
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck}
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier}
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+% \usecolortheme{beaver}
+%\usecolortheme{beetle}
+% \usecolortheme{crane}
+%  \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+% \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{iiit-new.png}};
+\end{tikzpicture}}
+
+\setbeamercolor{title in head/foot}{bg=OrangeRed, fg=White}
+\setbeamercolor{author in head/foot}{bg=RoyalBlue, fg=White}
+\setbeamercolor{date in head/foot}{bg=SlateGray, fg=Black}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Discrete Structures]{Discrete Structures} % The short title appears at the bottom of every slide, the full title is only on the title page
+\author{IIIT Hyderabad} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Monsoon 2020 \\ % Your institution for the title page
+\medskip
+\textit{Tutorial 14} % Your email address
+}
+\date{November 6, 2020} % Date, can be changed to a custom date
+\newcommand{\comment}[1]{}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Questions}
+%------------------------------------------------
+
+%------------------------------------------------
+\subsection{Question 1}
+%------------------------------------------------
+
+
+% Please add the following required packages to your document preamble:
+% Please add the following required packages to your document preamble:
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{frame}{Question 1}
+\textbf{1.1:} Construct Cayley table for 
+\begin{enumerate}
+    \item $S = \{EVEN, ODD\}, Op = +$.
+    \item $S = \mathbb{Z}_3, Op = \times$.
+    \item [*] $S = \{R_{\theta}, \theta = 60k \}$(rotation by multiples of 60 degrees)  , $Op = \text{ Composition}$ .
+\end{enumerate}
+\textbf{1.2:} Let $G = <\mathbb{Z}_{9}^*,\times>$, find 
+\begin{enumerate}
+    \item $e$(identity)
+    \item $4^{-1}$
+    \item $5 \times 8$
+    \item $g$ (generator).
+\end{enumerate}
+Recall that $Z^{*}_{N}$ was the set of numbers co-prime to $N$.
+\end{frame}
+
+
+
+%------------------------------------------------
+\subsection{Question 2}
+%------------------------------------------------
+\begin{frame}{Question 2}
+ Show the following - 
+\begin{enumerate}
+    \item Let a group $G = <S,*>$, show that $(a*b)^{-1} = b^{-1}*a^{-1}$ if $a,b \in S$.
+    \item $(ab)^{-1} = a^{-1}b^{-1} \iff $ group is Abelian.
+    \item In a semi-group $G = <S,*>$, say if $a$ is any element. For every element $x$ , there are elements $u,v$ such that 
+    \begin{align*}
+        a*u = v*a = x
+    \end{align*}
+    Show that there is an identity element in $G$.
+\end{enumerate}
+   
+\end{frame}
+ 
+
+%------------------------------------------------
+\subsection{Question 3}
+%------------------------------------------------
+
+
+% Please add the following required packages to your document preamble:
+% Please add the following required packages to your document preamble:
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{frame}{Question 3}
+    Use the following numbers for the next question - 
+    \begin{enumerate}
+        \item Groupoid
+        \item Semi-group
+        \item Cyclic Semi-group 
+        \item Monoid
+        \item Cyclic Monoid
+        \item Group
+        \item Cyclic Group
+        \item Quasi-Group
+    \end{enumerate}
+\end{frame}
+\begin{frame}
+For the given sets and operations (Opn), mark the correct ticks. For all the cyclic groups, find the generators. - 
+\begin{center}
+\begin{table}[!ht]
+    \centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+{\ul \textbf{Set}} & {\ul \textbf{Opn}} & {\ul \textbf{1}} & {\ul \textbf{2}} & {\ul \textbf{3}} & {\ul \textbf{4}} & {\ul \textbf{5}} & {\ul \textbf{6}} & {\ul \textbf{7}} & {\ul \textbf{8}} \\ \hline
+         $\mathbb{Z}_7$          &   +                       &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+              $\mathbb{Z}$    &     -                     &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+$\mathbb{Z}_5^*$                  & $\hat{}$                        &              &             &                &                &                &               &                &                \\ \hline
+
+             $\mathbb{Q} - \{0\}$      &    $\div$                      &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+                  $\mathbb{Z}_{11}^*$ &            $\times$              &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+                  $\mathbb{Z}_{12}^*$ & $\times$                         &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+                  $2 \times 2$ Matrices & $\times$                          &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+           $2 \times 2$  Matrices       &    +                      &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+            $\mathbb{N}$       & \div     &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+            
+                    [*]    Reflection lines  in $n$-gon     &  Composition                        &                  &                  &                  &                  &                  &                  &                  &                  \\ \hline
+                   
+\end{tabular}
+\end{table}
+\end{center}
+\end{frame}
+
+\end{document} 
